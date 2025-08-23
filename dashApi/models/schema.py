@@ -1,4 +1,5 @@
 from pydantic import BaseModel
 
-class HelloResponse(BaseModel):
+class PingResponse(BaseModel):
     message: str
+    uptime_seconds: float
