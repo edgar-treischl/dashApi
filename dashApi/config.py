@@ -4,7 +4,7 @@ from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
-    app_name: str = "DS Dash API"
+    app_name: str = "Dash API"
     debug: bool = False
     host: str = "127.0.0.1"
     port: int = 8000
