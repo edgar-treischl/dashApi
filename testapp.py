@@ -1,8 +1,3 @@
-# test_app.py
-from fastapi import FastAPI
+from dashApi.core.plotter import generate_gapminder_plot
 
-app = FastAPI()
-
-@app.get("/")
-def root():
-    return {"message": "It works!"}
+generate_gapminder_plot(2007)
