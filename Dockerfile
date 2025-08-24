@@ -8,7 +8,8 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
     POETRY_NO_INTERACTION=1
 
 # Install Poetry
-RUN pip install --upgrade pip && pip install poetry
+RUN pip install --upgrade pip setuptools poetry
+
 
 # Set work directory
 WORKDIR /app
@@ -26,6 +27,7 @@ COPY pyproject.toml poetry.lock* /app/
 
 # Install dependencies
 # RUN poetry install --only main
+# No prompts, no color CLI, API; so no package
 RUN poetry install --no-interaction --no-ansi --no-root
 
 
