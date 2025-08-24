@@ -5,5 +5,3 @@ from dashApi.config import settings
 app = FastAPI(title="DS Dash API")
 
 app.include_router(api_router)
-
-

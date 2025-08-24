@@ -7,6 +7,7 @@ from dashApi.models.schema import PingResponse
 
 router = APIRouter()
 
+
 @router.get("/ping", response_model=PingResponse, tags=["Health"])
 async def ping():
     return get_ping_response()
