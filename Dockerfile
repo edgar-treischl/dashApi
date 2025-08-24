@@ -1,5 +1,5 @@
 # Use a slim Python image
-FROM python:3.13-slim as base
+FROM python:3.13-slim as builder
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1 \
@@ -25,7 +25,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY pyproject.toml poetry.lock* /app/
 
 # Install dependencies
-RUN poetry install --only main
+# RUN poetry install --only main
+RUN poetry install --no-interaction --no-ansi
+
 
 # Copy the rest of the code
 COPY dashApi/ /app/dashApi/
