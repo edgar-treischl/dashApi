@@ -11,7 +11,7 @@ jobs:
 
     permissions:
       contents: read
-      packages: write  # Required for pushing to GHCR
+      packages: write
 
     steps:
       - name: Checkout source code
@@ -32,4 +32,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ format('ghcr.io/{0}/{1}:latest', github.repository_owner, github.event.repository.name) | toLower }}
+          tags: ${{ format('ghcr.io/{0}/{1}:latest', github.repository_owner.toLowerCase(), github.event.repository.name.toLowerCase()) }}
